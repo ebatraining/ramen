@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
-<meta charset="Shift-JIS">
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
 <link href="css/design.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 <title>激戦区茨城県！おすすめラーメン店</title>
@@ -12,10 +12,10 @@ $(function () {
     $('p.ticker').marquee();
 });
 $(function(){
-    var imgNum = 4;     
-    var imgSize = 468;  
-    var time = 3000;    
-    var current = 1;    
+    var imgNum = 4;
+    var imgSize = 468;
+    var time = 3000;
+    var current = 1;
     setInterval(function(){
         if( current < imgNum ) {
             current++;
@@ -31,7 +31,7 @@ $(function(){
     }, time);
 });
 $(function() {
-    var topBtn = $('.page-top');    
+    var topBtn = $('.page-top');
     topBtn.hide();
     //スクロールが100に達したらボタン表示
     $(window).scroll(function () {
@@ -53,9 +53,16 @@ $(function() {
 <div id="container">
 
    <div class="firstview">
-    <img src="img/firstview.jpg">
+    <img src="img/firstview.jpg" usemap="#ImageMap" alt="" />
+<map name="ImageMap">
+ <area shape="rect" coords="547,47,728,227" href="#hariken" alt="ハリケンらーめん" />
+  <area shape="rect" coords="750,233,929,411" href="#kigenmon" alt="喜元門" />
+  <area shape="rect" coords="755,484,934,662" href="#kadohuji" alt="角ふじ明神" />
+  <area shape="rect" coords="318,515,497,693" href="#sansui" alt="三水" />
+  <area shape="rect" coords="152,636,330,817" href="#hamaya" alt="はま屋" />
+</map>
    </div>
-   
+
    <ul class="nvi">
    <li><div class="Button Radius5" id="IconList2"><a href="#kadohuji">角ふじ明神</a></div></li>
    <li><div class="Button Radius5" id="IconList3"><a href="#sansui">三水</a></div></li>
@@ -96,7 +103,7 @@ $(function() {
 <div id="main-contents">
 	<h1>茨城県のラーメン屋</h1>
     <div id="kadohuji">
-        <h2>本家角ふじ明神</h2>
+        <a name="kadohuji"><h2>本家角ふじ明神</h2></a>
         <div class="kadohuji_contents">
             <div class="kadohuji_l">
                 <p>次郎系ラーメンが特徴なお店です。<br>やや塩分＆脂分の多めなスープですが<br>しつこくはないと思います。<br>野菜はほぼもやしですが、シャキシャキで<br>濃い目のスープと一緒に食べると丁度良い感じです。<br>上に乗ったニンニクをスープと混ぜてお召し上がり下さい。</p>
@@ -105,7 +112,7 @@ $(function() {
                 <img src="img/kadohuji_ramen1.jpg">
             </div>
        </div>
-    
+
         <div class="shop_setumei1">
         <div class="setumei1_l">
         <span>店舗情報</span>
@@ -121,7 +128,7 @@ $(function() {
        </div>
    </div>
    <div id="sansui">
-       <h2>三水ラーメンつくば店</h2>
+       <a name="sansui"><h2>三水ラーメンつくば店</h2></a>
        <div class="sansui_contents">
             <div class="sansui_l">
                 <p>麺量が中盛・大盛までが無料サービスで選べて<br>麺の硬さ、油の量、味の濃さもお好みで選べます。<br>ラーメンの味の種類が醤油と味噌味の２種類で<br>色々なトッピングが出来ます。麺の硬さや味の濃さ、<br>背油の量が選べるのでお好みのラーメンを作ってはいかがでしょうか</p>
@@ -144,7 +151,7 @@ $(function() {
         </div>
 	</div>
 	<div id="kigenmon">
-		<h2>喜元門つくばサイエンス通り店</h2>
+		<a name="kigenmon"><h2>喜元門つくばサイエンス通り店</h2></a>
         <div class="kigenmon_contents">
             <div class="kigenmon_l">
                 <p>こちらは全体的に魚介系が強めの風味で、<br>割と油科感が強めな感じです。<br>喜元門の特徴はチャーシューが４種類あり、<br>自分で好きなチャーシューを選べることです。<br>・炭火焼きチャーシュー・直火焼きチャーシュー<br>・ばら巻きチャーシュー・低温調理チャーシュー<br>の４種類から好きな物を一つ選べます。</p>
@@ -167,7 +174,7 @@ $(function() {
         </div>
     </div>
     <div id="hamaya">
-        <h2>中華そば浜屋</h2>
+        <a name="hamaya"><h2>中華そば浜屋</h2></a>
         <div class="hamaya_contents">
             <div class="hamaya_l">
                 <p>中華そばとつけそばがそれぞれ11種類ずつ<br>あり、味も濃厚とあっさりで選べるので実質<br>22種類とメニュー豊富なラーメン屋さんです。<br>22種類もあるので自分のお好みの味やトッピング<br>などを色々試せるので何回行っても飽きないお店です。</p>
@@ -189,9 +196,9 @@ $(function() {
         </div>
         </div>
     </div>
-    
+
     <div id="hariken">
-        <h2>ハリケンらーめん</h2>
+        <a name="hariken"><h2>ハリケンらーめん</h2></a>
         <div class="hariken_contents">
             <div class="hariken_l">
                 <p>あっさり魚だし、鶏そば、濃厚魚介豚骨、濃厚つけそばなど12種類のメニューに加え、さらに2種類のラーメンが平日限定で用意されています。<br>もっちりとした小麦の香りのある麺が特徴です。代表メニューの鶏そばのスープからは煮出した鶏の旨味が溢れてきます。
@@ -233,4 +240,3 @@ $(function() {
 
 
 </html>
-
