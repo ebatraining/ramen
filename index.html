@@ -2,13 +2,31 @@
 <html lang="ja"><head>
   <meta charset="shift-jis">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="css/design.css" rel="stylesheet" type="text/css">
+<link href="css/sp.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
 <title>激戦区茨城県！おすすめラーメン店</title>
 <script src="js/jquery.marquee.js"></script>
+
 </head>
    <body>
    <script>
+   $(function(){
+    $('.js-modal-open').each(function(){
+        $(this).on('click',function(){
+            var target = $(this).data('target');
+            var modal = document.getElementById(target);
+            $(modal).fadeIn();
+            return false;
+        });
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modal').fadeOut();
+        return false;
+    });
+});
+
 $(function () {
     $('p.ticker').marquee();
 });
@@ -107,12 +125,58 @@ $(function() {
         <a name="kadohuji"><h2>本家角ふじ明神</h2></a>
         <div class="kadohuji_contents">
             <div class="kadohuji_l">
-                <p>次郎系ラーメンが特徴なお店です。あああああああああああああああああああああ<br>やや塩分＆脂分の多めなスープですが<br>しつこくはないと思います。<br>野菜はほぼもやしですが、シャキシャキで<br>濃い目のスープと一緒に食べると丁度良い感じです。<br>上に乗ったニンニクをスープと混ぜてお召し上がり下さい。</p>
+                <p>次郎系ラーメンが特徴なお店です。<br>やや塩分＆脂分の多めなスープですが<br>しつこくはないと思います。<br>野菜はほぼもやしですが、シャキシャキで<br>濃い目のスープと一緒に食べると丁度良い感じです。<br>上に乗ったニンニクをスープと混ぜてお召し上がり下さい。</p>
             </div>
             <div class="kadohuji_r">
                 <img src="img/kadohuji_ramen1.jpg">
             </div>
-       </div>
+        </div>
+
+        <div class="modal_img">
+          <a class="js-modal-open" href="" data-target="modal01"><img src="img/kadohuji_ramen2.jpg"></a>
+          <a class="js-modal-open" href="" data-target="modal02"><img src="img/kadohuji_ramen3.jpg"></a>
+          <a class="js-modal-open" href="" data-target="modal03"><img src="img/kadohuji_ramen4.jpg"></a>
+          <a class="js-modal-open" href="" data-target="modal04"><img src="img/kadohuji_ramen5.jpg"></a>
+
+      <div id="modal01" class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+            <img src="img/kadohuji_ramen2.jpg">
+            <a class="js-modal-close" href=""><span>&#10006;</span></a>
+        </div><!--modal__inner-->
+      </div><!--modal-->
+
+      <div id="modal02" class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+          <img src="img/kadohuji_ramen3.jpg">
+          <a class="js-modal-close" href=""><span>&#10006;</span></a>
+        </div><!--modal__inner-->
+      </div><!--modal-->
+
+      <div id="modal03" class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+            <img src="img/kadohuji_ramen4.jpg">
+            <a class="js-modal-close" href=""><span>&#10006;</span></a>
+        </div><!--modal__inner-->
+      </div><!--modal-->
+
+      <div id="modal04" class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+          <img src="img/kadohuji_ramen5.jpg">
+          <a class="js-modal-close" href=""><span>&#10006;</span></a>
+        </div><!--modal__inner-->
+      </div><!--modal-->
+
+
+        </div>
+
+
+
+
+
 
         <div class="shop_setumei1">
         <div class="setumei1_l">

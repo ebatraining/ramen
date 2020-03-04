@@ -1,5 +1,7 @@
 
+
 body{
+	width: auto;
 	margin:0;
 	background:url(../img/backgrond_image.jpg);
 	background-attachment:fixed;
@@ -7,11 +9,21 @@ body{
 	background-position:center center;
 }
 
+#container {
+	width: 100%;
+}
+
+
 /*ファーストビュー*/
 .firstview{
+	width: 100%;
  text-align: center;
  margin-top:-10px;
 }
+
+
+
+
 
 /*-------------------------------------------------------
 フォント
@@ -125,7 +137,7 @@ body{
 ボタン
 --------------------------------------------------------*/
 
-.Radius5 { 
+.Radius5 {
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -141,7 +153,7 @@ body{
 .Button a {
     display: block;
     position: relative;
-    z-index: 100;
+    /* z-index: 100; */
     text-align:center;
     background: #14ae67;
     color: #fff;
@@ -171,7 +183,7 @@ body{
 }
 
 
-	
+
 
 
 /*--------------------------------------------------------
@@ -239,11 +251,80 @@ vertical-align:middle;
 
 .kadohuji_r{
 width:40%;
-display:table-cell;	
+display:table-cell;
 vertical-align:middle;
 margin:0 auto;
 text-align:center;
 }
+
+.modal_img {
+	margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.modal_img img {
+	display: block;
+	width: 100%;
+}
+
+
+
+.modal{
+    display: none;
+		position: relative;
+}
+
+
+
+.modal__content{
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+    background: #333;
+    position: fixed;
+		margin-left: 10%;
+		top: 0;
+		left: 0;
+		margin-left: 0;
+}
+
+
+.modal__content img {
+	width: 50%;
+	position: absolute;
+	left: 23%;
+	top: 10%;
+}
+
+a.js-modal-close {
+	display: block;
+	position: absolute;
+	right: 25%;
+	top: 10%;
+  text-decoration: none;
+}
+
+.js-modal-close span{
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	font-size: 2em;
+	display: block;
+	width: 50px;
+}
+
+a.js-modal-open {
+	display: block;
+	width: 20%;
+}
+
+
+
+
+
+
 
 #sansui{
 	display:block;
@@ -267,7 +348,7 @@ vertical-align:middle;
 
 .sansui_r{
 width:40%;
-display:table-cell;	
+display:table-cell;
 vertical-align:middle;
 margin:0 auto;
 text-align:center;
@@ -295,7 +376,7 @@ vertical-align:middle;
 
 .kigenmon_r{
 width:40%;
-display:table-cell;	
+display:table-cell;
 vertical-align:middle;
 margin:0 auto;
 text-align:center;
@@ -323,7 +404,7 @@ vertical-align:middle;
 
 .hamaya_r{
 width:40%;
-display:table-cell;	
+display:table-cell;
 vertical-align:middle;
 margin:0 auto;
 text-align:center;
@@ -351,7 +432,7 @@ vertical-align:middle;
 
 .hariken_r{
 width:40%;
-display:table-cell;	
+display:table-cell;
 vertical-align:middle;
 margin:0 auto;
 text-align:center;
@@ -485,12 +566,3 @@ text-align:center;
 margin-top:100px;
 padding:50px 0 50px;
 }
-
-
-
-
-
-
-
-
-
