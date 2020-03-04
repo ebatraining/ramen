@@ -1,6 +1,8 @@
 
+@media screen and (max-width:767px) {
 
 body{
+	width: auto;
 	margin:0;
 	background:url(../img/backgrond_image.jpg);
 	background-attachment:fixed;
@@ -8,16 +10,17 @@ body{
 	background-position:center center;
 }
 
-
 /*ファーストビュー*/
 .firstview{
-	width: 100%;
  text-align: center;
  margin-top:-10px;
 }
 
 
 
+#firstview{
+	width: 100%;
+}
 
 
 /*-------------------------------------------------------
@@ -252,15 +255,44 @@ margin:0 auto;
 text-align:center;
 }
 
-.modal_content {
-	width: 100%;
+.modal_img {
+	margin: 0 auto;
 }
 
-.modal_img{
-  width: 21%;
+.modal_img img {
 	float: left;
+	width: 20%;
 	padding: 5% 2%;
+	position: relative;
 }
+
+
+.modal{
+    display: none;
+}
+
+
+
+.modal__content{
+		width: 50%;
+    background: #333;
+    position: absolute;
+		margin-left: 10%;
+}
+
+.modal__content img {
+	width: 80%;
+	padding:10% 0 10% 10%;
+}
+
+.js-modal-close{
+	font-size: 2em;
+	color: #000;
+	text-decoration: none;
+}
+
+
+
 
 
 
@@ -506,4 +538,9 @@ background:#9A9A9A;
 text-align:center;
 margin-top:100px;
 padding:50px 0 50px;
+}
+
+
+
+
 }

@@ -5,70 +5,85 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="css/design.css" rel="stylesheet" type="text/css">
 <link href="css/sp.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+<link rel="stylesheet" href="css/modaal.css">
+<!-- <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script> -->
 <title>激戦区茨城県！おすすめラーメン店</title>
-<script src="js/jquery.marquee.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/modaal.min.js"></script>
+
+<script>
+$(function () {
+   $('.modal').modaal();
+ });
+
+
+
+//    プラグイン無しモーダル
+//    $(function(){
+//     $('.js-modal-open').each(function(){
+//         $(this).on('click',function(){
+//             var target = $(this).data('target');
+//             var modal = document.getElementById(target);
+//             $(modal).fadeIn();
+//             return false;
+//         });
+//     });
+//     $('.js-modal-close').on('click',function(){
+//         $('.js-modal').fadeOut();
+//         return false;
+//     });
+// });
+
+
+
+$(function () {
+ $('p.ticker').marquee();
+});
+$(function(){
+ var imgNum = 4;
+ var imgSize = 468;
+ var time = 3000;
+ var current = 1;
+ setInterval(function(){
+     if( current < imgNum ) {
+         current++;
+         $("#banner ul").animate({
+             marginLeft : parseInt($("#banner ul").css("margin-left"))-imgSize+"px"
+         },"fast");
+     } else {
+          $("#banner ul").animate({
+             marginLeft : parseInt($("#banner ul").css("margin-left"))+(imgSize * (imgNum-1))+"px"
+         },"fast");
+         current = 1;
+     }
+ }, time);
+});
+$(function() {
+ var topBtn = $('.page-top');
+ topBtn.hide();
+ //スクロールが100に達したらボタン表示
+ $(window).scroll(function () {
+     if ($(this).scrollTop() > 100) {
+         topBtn.fadeIn();
+     } else {
+         topBtn.fadeOut();
+     }
+ });
+ //スクロールしてトップ
+ topBtn.click(function () {
+     $('body,html').animate({
+         scrollTop: 0
+     }, 500);
+     return false;
+ });
+});
+
+
+</script>
 
 </head>
    <body>
-   <script>
-   $(function(){
-    $('.js-modal-open').each(function(){
-        $(this).on('click',function(){
-            var target = $(this).data('target');
-            var modal = document.getElementById(target);
-            $(modal).fadeIn();
-            return false;
-        });
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal').fadeOut();
-        return false;
-    });
-});
 
-$(function () {
-    $('p.ticker').marquee();
-});
-$(function(){
-    var imgNum = 4;
-    var imgSize = 468;
-    var time = 3000;
-    var current = 1;
-    setInterval(function(){
-        if( current < imgNum ) {
-            current++;
-            $("#banner ul").animate({
-                marginLeft : parseInt($("#banner ul").css("margin-left"))-imgSize+"px"
-            },"fast");
-        } else {
-             $("#banner ul").animate({
-                marginLeft : parseInt($("#banner ul").css("margin-left"))+(imgSize * (imgNum-1))+"px"
-            },"fast");
-            current = 1;
-        }
-    }, time);
-});
-$(function() {
-    var topBtn = $('.page-top');
-    topBtn.hide();
-    //スクロールが100に達したらボタン表示
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            topBtn.fadeIn();
-        } else {
-            topBtn.fadeOut();
-        }
-    });
-    //スクロールしてトップ
-    topBtn.click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 500);
-        return false;
-    });
-});
-</script>
 <div id="container">
 
    <div class="firstview">
@@ -132,44 +147,28 @@ $(function() {
             </div>
         </div>
 
-        <div class="modal_img">
-          <a class="js-modal-open" href="" data-target="modal01"><img src="img/kadohuji_ramen2.jpg"></a>
-          <a class="js-modal-open" href="" data-target="modal02"><img src="img/kadohuji_ramen3.jpg"></a>
-          <a class="js-modal-open" href="" data-target="modal03"><img src="img/kadohuji_ramen4.jpg"></a>
-          <a class="js-modal-open" href="" data-target="modal04"><img src="img/kadohuji_ramen5.jpg"></a>
 
-      <div id="modal01" class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
-        <div class="modal__content">
-            <img src="img/kadohuji_ramen2.jpg">
-            <a class="js-modal-close" href=""><span>&#10006;</span></a>
-        </div><!--modal__inner-->
-      </div><!--modal-->
 
-      <div id="modal02" class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
-        <div class="modal__content">
-          <img src="img/kadohuji_ramen3.jpg">
-          <a class="js-modal-close" href=""><span>&#10006;</span></a>
-        </div><!--modal__inner-->
-      </div><!--modal-->
+        <div class="modal_content">
+          <a href="#modal" class="modal"><img class="modal_img" src="img/kadohuji_ramen2.jpg"></a>
+          <div id="modal" style="display:none;">
+	           <img class="modal_ramen" src="img/kadohuji_ramen2.jpg">
+           </div>
 
-      <div id="modal03" class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
-        <div class="modal__content">
-            <img src="img/kadohuji_ramen4.jpg">
-            <a class="js-modal-close" href=""><span>&#10006;</span></a>
-        </div><!--modal__inner-->
-      </div><!--modal-->
+          <a href="#modal" class="modal"><img class="modal_img" src="img/kadohuji_ramen3.jpg"></a>
+           <div id="modal" style="display:none;">
+ 	           <img class="modal_ramen" src="img/kadohuji_ramen3.jpg">
+           </div>
 
-      <div id="modal04" class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
-        <div class="modal__content">
-          <img src="img/kadohuji_ramen5.jpg">
-          <a class="js-modal-close" href=""><span>&#10006;</span></a>
-        </div><!--modal__inner-->
-      </div><!--modal-->
+           <a href="#modal" class="modal"><img class="modal_img" src="img/kadohuji_ramen4.jpg"></a>
+            <div id="modal" style="display:none;">
+  	           <img class="modal_ramen" src="img/kadohuji_ramen4.jpg">
+            </div>
 
+            <a href="#modal" class="modal"><img class="modal_img" src="img/kadohuji_ramen5.jpg"></a>
+             <div id="modal" style="display:none;">
+   	           <img class="modal_ramen" src="img/kadohuji_ramen5.jpg">
+             </div>
 
         </div>
 
