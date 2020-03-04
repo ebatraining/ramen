@@ -55,13 +55,26 @@
 	ul.nvi {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 0;
+    margin: 0 auto;
+    table-layout: unset;
 	}
 
+	.nvi li {
+		display: block;
+    width: 49%;
+    margin-top: 10px;
+	}
+
+	.hariken a {
+    text-align: center;
+    padding-right: 0;
+}
+
 	.Button {
-	 	margin-left: 1.5rem;
-		width: 10rem;
-		margin-right: 1rem;
-		margin-bottom: 0.5rem;
+		width: 100%;
+    margin: 0;
 		text-align: center;
 	}
 
